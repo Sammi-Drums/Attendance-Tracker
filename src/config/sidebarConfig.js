@@ -13,10 +13,14 @@ export const sidebarConfig = {
         { label: "History", path: "/history", icon: FileText },
     ],
 
+    teacher: [
+        { label: "Dashboard", path: "/teacher", icon: LayoutDashboard },
+        { label: "Attendance", path: "/attendance", icon: CheckSquare },
+        { label: "History", path: "/history", icon: FileText },
+    ],
+
     admin: [
-        { label: "Dashboard", path: "/admin", icon: LayoutDashboard },
-        { label: "Users", path: "/admin/users", icon: Users },
+        { label: "Dashboard", path: "/admin/dashboard", icon: LayoutDashboard },
         { label: "Settings", path: "/admin/settings", icon: Settings },
-        { label: "Reports", path: "/admin/reports", icon: FileText },
     ],
 };

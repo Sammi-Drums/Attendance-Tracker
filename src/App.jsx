@@ -1,10 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import RoleSelect from "./pages/RoleSelect";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ForgetPassword from "./pages/ForgetPassword";
 import Dashboard from "./pages/Dashboard";
 import Attendance from "./pages/Attendance";
 import History from "./pages/History";
 import AdminSettings from "./pages/AdminSettings";
+import AdminDashboard from "./pages/AdminDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import TeacherDashboard from "./pages/TeacherDashboard";
 
@@ -13,6 +16,8 @@ export default function App() {
     <Routes>
       <Route path="/" element={<RoleSelect />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgetPassword />} />
 
       <Route
         path="/dashboard"
@@ -42,16 +47,6 @@ export default function App() {
       />
 
       <Route
-        path="/admin/settings"
-        element={
-          <ProtectedRoute allowedRoles={["admin"]}>
-            <AdminSettings />
-          </ProtectedRoute>
-        }
-      />
-
-
-      <Route
         path="/teacher"
         element={
           <ProtectedRoute allowedRoles={["teacher"]}>
@@ -60,6 +55,23 @@ export default function App() {
         }
       />
 
+      <Route
+        path="/admin/dashboard"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminDashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/settings"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminSettings />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }
